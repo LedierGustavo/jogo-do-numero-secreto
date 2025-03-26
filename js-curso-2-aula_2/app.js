@@ -1,7 +1,7 @@
 // Lista de números já sorteados
 let listaDeNumerosSortidos = [];
 // Quantidade máxima de números sorteados
-const quantMaxima = 10;
+const quantMaxima = 30;
 // Contador de tentativas
 let cont = 1;
 
@@ -13,7 +13,7 @@ function exibirTextoNaTela(tag, texto) {
 // Exibe a mensagem inicial do jogo
 function mensagemInicial() {
     exibirTextoNaTela('h1', 'Jogo do Número Secreto');
-    exibirTextoNaTela('p', 'Escolha um número entre 1 e 10');
+    exibirTextoNaTela('p', `Escolha um número entre 1 e ${quantMaxima}`);
 }
 mensagemInicial();
 
@@ -47,9 +47,10 @@ function verificarChute() {
     let chute = parseInt(document.querySelector('input').value);
 
     // Verifica se a entrada é válida
-    if (isNaN(chute) || chute < 1 || chute > 10) {
+    if (isNaN(chute) || chute < 1 || chute > quantMaxima) {
         exibirTextoNaTela('h1', 'OPS!');
-        exibirTextoNaTela('p', 'Por favor, insira um número válido entre 1 e 10!');
+        exibirTextoNaTela('p', `Por favor, insira um número válido entre 1 e ${quantMaxima}!`);
+        limparCampo();
         return;
     }
 
