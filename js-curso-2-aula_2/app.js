@@ -1,7 +1,7 @@
 // Lista de números já sorteados
 let listaDeNumerosSortidos = [];
 // Quantidade máxima de números sorteados
-const quantMaxima = 30;
+const quantMaxima = 100;
 // Contador de tentativas
 let cont = 1;
 
